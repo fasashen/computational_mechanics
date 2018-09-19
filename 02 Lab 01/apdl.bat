@@ -1,1 +1,0 @@
-"C:\Program Files\ANSYS Inc\v171\ansys\bin\winx64\ANSYS171" -b -i "lab1.apdl" -o ".\output\output.txt" -dir ".\output" -np 4
