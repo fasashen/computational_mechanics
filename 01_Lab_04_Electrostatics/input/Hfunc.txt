@@ -1,0 +1,201 @@
+*dim,Hfunc,table,101,,,X
+*taxis,Hfunc(1),1,0.0
+Hfunc(1) =   -0.000
+*taxis,Hfunc(2),1,0.001
+Hfunc(2) =   -0.010
+*taxis,Hfunc(3),1,0.002
+Hfunc(3) =   -0.020
+*taxis,Hfunc(4),1,0.003
+Hfunc(4) =   -0.030
+*taxis,Hfunc(5),1,0.004
+Hfunc(5) =   -0.040
+*taxis,Hfunc(6),1,0.005
+Hfunc(6) =   -0.050
+*taxis,Hfunc(7),1,0.006
+Hfunc(7) =   -0.060
+*taxis,Hfunc(8),1,0.007
+Hfunc(8) =   -0.070
+*taxis,Hfunc(9),1,0.008
+Hfunc(9) =   -0.080
+*taxis,Hfunc(10),1,0.009
+Hfunc(10) =   -0.090
+*taxis,Hfunc(11),1,0.01
+Hfunc(11) =   -0.100
+*taxis,Hfunc(12),1,0.011
+Hfunc(12) =   -0.110
+*taxis,Hfunc(13),1,0.012
+Hfunc(13) =   -0.120
+*taxis,Hfunc(14),1,0.013
+Hfunc(14) =   -0.130
+*taxis,Hfunc(15),1,0.014
+Hfunc(15) =   -0.140
+*taxis,Hfunc(16),1,0.015
+Hfunc(16) =   -0.150
+*taxis,Hfunc(17),1,0.016
+Hfunc(17) =   -0.160
+*taxis,Hfunc(18),1,0.017
+Hfunc(18) =   -0.170
+*taxis,Hfunc(19),1,0.018
+Hfunc(19) =   -0.180
+*taxis,Hfunc(20),1,0.019
+Hfunc(20) =   -0.190
+*taxis,Hfunc(21),1,0.02
+Hfunc(21) =   -0.200
+*taxis,Hfunc(22),1,0.021
+Hfunc(22) =   -0.210
+*taxis,Hfunc(23),1,0.022
+Hfunc(23) =   -0.220
+*taxis,Hfunc(24),1,0.023
+Hfunc(24) =   -0.230
+*taxis,Hfunc(25),1,0.024
+Hfunc(25) =   -0.240
+*taxis,Hfunc(26),1,0.025
+Hfunc(26) =   -0.250
+*taxis,Hfunc(27),1,0.026
+Hfunc(27) =   -0.260
+*taxis,Hfunc(28),1,0.027
+Hfunc(28) =   -0.270
+*taxis,Hfunc(29),1,0.028
+Hfunc(29) =   -0.280
+*taxis,Hfunc(30),1,0.029
+Hfunc(30) =   -0.290
+*taxis,Hfunc(31),1,0.03
+Hfunc(31) =   -0.300
+*taxis,Hfunc(32),1,0.031
+Hfunc(32) =   -0.310
+*taxis,Hfunc(33),1,0.032
+Hfunc(33) =   -0.320
+*taxis,Hfunc(34),1,0.033
+Hfunc(34) =   -0.330
+*taxis,Hfunc(35),1,0.034
+Hfunc(35) =   -0.340
+*taxis,Hfunc(36),1,0.035
+Hfunc(36) =   -0.350
+*taxis,Hfunc(37),1,0.036
+Hfunc(37) =   -0.360
+*taxis,Hfunc(38),1,0.037
+Hfunc(38) =   -0.370
+*taxis,Hfunc(39),1,0.038
+Hfunc(39) =   -0.380
+*taxis,Hfunc(40),1,0.039
+Hfunc(40) =   -0.390
+*taxis,Hfunc(41),1,0.04
+Hfunc(41) =   -0.400
+*taxis,Hfunc(42),1,0.041
+Hfunc(42) =   -0.410
+*taxis,Hfunc(43),1,0.042
+Hfunc(43) =   -0.420
+*taxis,Hfunc(44),1,0.043
+Hfunc(44) =   -0.430
+*taxis,Hfunc(45),1,0.044
+Hfunc(45) =   -0.440
+*taxis,Hfunc(46),1,0.045
+Hfunc(46) =   -0.450
+*taxis,Hfunc(47),1,0.046
+Hfunc(47) =   -0.460
+*taxis,Hfunc(48),1,0.047
+Hfunc(48) =   -0.470
+*taxis,Hfunc(49),1,0.048
+Hfunc(49) =   -0.480
+*taxis,Hfunc(50),1,0.049
+Hfunc(50) =   -0.490
+*taxis,Hfunc(51),1,0.05
+Hfunc(51) =   -0.500
+*taxis,Hfunc(52),1,0.051
+Hfunc(52) =   -0.510
+*taxis,Hfunc(53),1,0.052
+Hfunc(53) =   -0.520
+*taxis,Hfunc(54),1,0.053
+Hfunc(54) =   -0.530
+*taxis,Hfunc(55),1,0.054
+Hfunc(55) =   -0.540
+*taxis,Hfunc(56),1,0.055
+Hfunc(56) =   -0.550
+*taxis,Hfunc(57),1,0.056
+Hfunc(57) =   -0.560
+*taxis,Hfunc(58),1,0.057
+Hfunc(58) =   -0.570
+*taxis,Hfunc(59),1,0.058
+Hfunc(59) =   -0.580
+*taxis,Hfunc(60),1,0.059
+Hfunc(60) =   -0.590
+*taxis,Hfunc(61),1,0.06
+Hfunc(61) =   -0.600
+*taxis,Hfunc(62),1,0.061
+Hfunc(62) =   -0.610
+*taxis,Hfunc(63),1,0.062
+Hfunc(63) =   -0.620
+*taxis,Hfunc(64),1,0.063
+Hfunc(64) =   -0.630
+*taxis,Hfunc(65),1,0.064
+Hfunc(65) =   -0.640
+*taxis,Hfunc(66),1,0.065
+Hfunc(66) =   -0.650
+*taxis,Hfunc(67),1,0.066
+Hfunc(67) =   -0.660
+*taxis,Hfunc(68),1,0.067
+Hfunc(68) =   -0.670
+*taxis,Hfunc(69),1,0.068
+Hfunc(69) =   -0.680
+*taxis,Hfunc(70),1,0.069
+Hfunc(70) =   -0.690
+*taxis,Hfunc(71),1,0.07
+Hfunc(71) =   -0.700
+*taxis,Hfunc(72),1,0.071
+Hfunc(72) =   -0.710
+*taxis,Hfunc(73),1,0.072
+Hfunc(73) =   -0.720
+*taxis,Hfunc(74),1,0.073
+Hfunc(74) =   -0.730
+*taxis,Hfunc(75),1,0.074
+Hfunc(75) =   -0.740
+*taxis,Hfunc(76),1,0.075
+Hfunc(76) =   -0.750
+*taxis,Hfunc(77),1,0.076
+Hfunc(77) =   -0.760
+*taxis,Hfunc(78),1,0.077
+Hfunc(78) =   -0.770
+*taxis,Hfunc(79),1,0.078
+Hfunc(79) =   -0.780
+*taxis,Hfunc(80),1,0.079
+Hfunc(80) =   -0.790
+*taxis,Hfunc(81),1,0.08
+Hfunc(81) =   -0.800
+*taxis,Hfunc(82),1,0.081
+Hfunc(82) =   -0.810
+*taxis,Hfunc(83),1,0.082
+Hfunc(83) =   -0.820
+*taxis,Hfunc(84),1,0.083
+Hfunc(84) =   -0.830
+*taxis,Hfunc(85),1,0.084
+Hfunc(85) =   -0.840
+*taxis,Hfunc(86),1,0.085
+Hfunc(86) =   -0.850
+*taxis,Hfunc(87),1,0.086
+Hfunc(87) =   -0.860
+*taxis,Hfunc(88),1,0.087
+Hfunc(88) =   -0.870
+*taxis,Hfunc(89),1,0.088
+Hfunc(89) =   -0.880
+*taxis,Hfunc(90),1,0.089
+Hfunc(90) =   -0.890
+*taxis,Hfunc(91),1,0.09
+Hfunc(91) =   -0.900
+*taxis,Hfunc(92),1,0.091
+Hfunc(92) =   -0.910
+*taxis,Hfunc(93),1,0.092
+Hfunc(93) =   -0.920
+*taxis,Hfunc(94),1,0.093
+Hfunc(94) =   -0.930
+*taxis,Hfunc(95),1,0.094
+Hfunc(95) =   -0.940
+*taxis,Hfunc(96),1,0.095
+Hfunc(96) =   -0.950
+*taxis,Hfunc(97),1,0.096
+Hfunc(97) =   -0.960
+*taxis,Hfunc(98),1,0.097
+Hfunc(98) =   -0.970
+*taxis,Hfunc(99),1,0.098
+Hfunc(99) =   -0.980
+*taxis,Hfunc(100),1,0.099
+Hfunc(100) =   -0.990

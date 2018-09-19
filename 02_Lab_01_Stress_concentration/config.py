@@ -1,0 +1,12 @@
+title = 'Lab 1 - Task 5.1'
+e = 2.1e6*9.80665/1e-4
+nu = 0.3
+yi = 2000*9.80665/1e-4
+D = 10*1e-2
+dcoef = 1.3
+D_inf = D
+P = 8000*9.80665
+eltype1 = 182
+eltype2 = 183
+sigma = 4*P/3.14159/(D)**2
+sigma_nom = 4*P/3.14159/(D/dcoef)**2

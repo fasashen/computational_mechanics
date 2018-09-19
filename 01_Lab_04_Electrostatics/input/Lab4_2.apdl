@@ -1,0 +1,138 @@
+finish
+/clear
+
+/input, ../input/config_2.py
+/input, ../input/Hfunc.txt
+/prep7
+
+ET,1,eltype
+ET,2,eltype
+
+MP,KXX,1,m
+MP,KXX,2,1
+
+CSYS,1            ! CYLINDRICAL COORDINATE SYSTEM
+cyl4,,,0,0,a/2,90
+cyl4,,,a/2,0,a,90
+cyl4,,,a,0,2*a,90
+cyl4,,,2*a,0,10*a,90
+NUMMRG,kp
+
+!meshing
+LSEL,s,,,1
+LSEL,a,,,4
+LSEL,a,,,8
+LSEL,a,,,11
+LSEL,a,,,9
+LSEL,a,,,12
+LSEL,a,,,13
+LSEL,a,,,15
+LSEL,a,,,2
+LSEL,a,,,3
+LESIZE,all,,,elnum
+LSEL,s,,,7
+LSEL,a,,,5
+LESIZE,all,,,elnum/2
+type,1
+mat,1
+amap,1,1,2,3
+amap,2,1,4,5,2
+type,2
+mat,2
+amap,3,4,8,9,5
+amap,4,8,12,13,9
+
+!loads
+LSEL,s,loc,y,0
+DL,all,,symm
+LSEL,s,loc,y,90
+DL,all,,temp,0
+LSEL,s,loc,x,10*a
+DL,all,,temp,%Hfunc%
+KSEL,s,,,12
+DK,all,temp,-10*10*a
+
+alls
+/solu
+ANTYPE,static
+outres,all,all
+solve
+finish
+/POST1  
+PLNSOL, TEMP,,0
+!nodes for circle path r1 = a/2
+N101 = NODE(r1,0,0)
+N102 = NODE(r1,1*deg_step,0)
+N103 = NODE(r1,2*deg_step,0)
+N104 = NODE(r1,3*deg_step,0)
+N105 = NODE(r1,4*deg_step,0)
+!nodes for circle path r1 = a
+N201 = NODE(r2,0,0)
+N202 = NODE(r2,1*deg_step,0)
+N203 = NODE(r2,2*deg_step,0)
+N204 = NODE(r2,3*deg_step,0)
+N205 = NODE(r2,4*deg_step,0)
+!nodes for circle path r1 = 2a
+N301 = NODE(r3,0,0)
+N302 = NODE(r3,1*deg_step,0)
+N303 = NODE(r3,2*deg_step,0)
+N304 = NODE(r3,3*deg_step,0)
+N305 = NODE(r3,4*deg_step,0)
+!nodes for radial path phi = 0 
+N1001 = NODE(0,0,0)
+N1002 = NODE(a,0,0)
+N1003 = NODE(10*a,0,0)
+
+/HEADER, OFF
+!path r = a/2
+PATH, phi1path, 5,1,1
+PPATH, 1, N101
+PPATH, 2, N102
+PPATH, 3, N103
+PPATH, 4, N104
+PPATH, 5, N105
+PDEF, phi1_temp, temp
+/OUTPUT,phi1_temp.txt
+PRPATH, phi1_temp
+/OUTPUT
+!path r = a
+PATH, phi2path, 5,1,1
+PPATH, 1, N201
+PPATH, 2, N202
+PPATH, 3, N203
+PPATH, 4, N204
+PPATH, 5, N205
+PDEF, phi2_temp, temp
+/OUTPUT,phi2_temp.txt
+PRPATH, phi2_temp
+/OUTPUT
+!path r = a
+PATH, phi3path, 5,1,1
+PPATH, 1, N301
+PPATH, 2, N302
+PPATH, 3, N303
+PPATH, 4, N304
+PPATH, 5, N305
+PDEF, phi3_temp, temp
+/OUTPUT,phi3_temp.txt
+PRPATH, phi3_temp
+/OUTPUT
+
+!path1 phi=0, 0<r<a
+PATH, r1path, 2,1,4
+PPATH, 1, N1001
+PPATH, 2, N1002
+PDEF, r1_temp, temp
+/OUTPUT,r1_temp.txt
+PRPATH, r1_temp
+/OUTPUT
+!path2 phi=0, 0<r<a
+PATH, r2path, 2,1,9
+PPATH, 1, N1002
+PPATH, 2, N1003
+PDEF, r2_temp, temp
+/OUTPUT,r2_temp.txt
+PRPATH, r2_temp
+/OUTPUT
+
+FINISH

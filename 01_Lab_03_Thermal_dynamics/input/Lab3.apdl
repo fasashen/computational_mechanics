@@ -1,0 +1,59 @@
+finish
+/clear
+
+/input, ../input/config.py
+/input, ../input/qc_func.txt
+/prep7
+
+ANTYPE,TRANS
+ET,1,eltype,,,1      ! AXISYMMETRIC ELEMENTS
+MP,KXX,1,k
+MP,DENS,1,ro
+MP,C,1,c
+CSYS,1                ! CYLINDRICAL COORDINATE SYSTEM
+N,1
+N,2,a/elnum,-1
+N,(elnum+1),a,-1
+FILL
+NGEN,2,100,1,(elnum+1),1,,2
+E,2,102,1,1
+E,3,103,102,2
+EGEN,(elnum-1),1,2
+CP,1,TEMP,2,102        ! COUPLING TO ENSURE CIRCUMFERENTIAL SYMMETRY
+CPSGEN,(elnum),1,1
+AUTOTS,off             ! USE AUTOMATIC TIME STEPPING
+DELTIM,its            ! MIN TIME STEP SIZE
+OUTRES,,-1*steps 
+TIME,fulltime
+TUNIF,0
+KBC,1                 ! STEP BOUNDARY CONDITIONS
+NSEL,S,LOC,X,a
+SF,ALL,HFLUX,%qc%     ! CONVECTION ON ELEMENT SURFACE
+NSEL,ALL
+FINISH
+/SOLU    
+SOLVE
+FINISH
+
+/POST26
+N1 = NODE(Xp1,-5,0)
+N2 = NODE(Xp2,-5,0)
+N3 = NODE(Xp3,-5,0)
+NSOL,2,N1,TEMP
+NSOL,3,N2,TEMP
+NSOL,4,N3,TEMP
+
+/HEADER, OFF
+PRVAR,2
+/OUTPUT
+/HEADER, OFF, OFF, OFF, OFF, OFF, OFF
+/OUTPUT,temp_r1.txt
+PRVAR,2
+/OUTPUT
+/OUTPUT,temp_r2.txt
+PRVAR,3
+/OUTPUT
+/OUTPUT,temp_r3.txt
+PRVAR,4
+/OUTPUT
+FINISH
