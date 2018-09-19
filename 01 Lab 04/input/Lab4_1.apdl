@@ -1,0 +1,125 @@
+finish
+/clear
+
+/input, ../input/config_1.py
+/prep7
+
+ET,1,eltype
+MP,KXX,1,k
+MP,DENS,1,ro
+MP,C,1,c
+
+CSYS,1            ! CYLINDRICAL COORDINATE SYSTEM
+cyl4,,,a,0,b,1
+cyl4,,,a,1,b,90
+NUMMRG,kp,1e-5
+
+!meshing
+LSEL,s,,,6
+LSEL,a,,,4
+LSEL,a,,,2
+LESIZE,all,,,elnum
+LSEL,s,,,7
+LSEL,a,,,5
+LESIZE,all,,,2*elnum
+LSEL,s,,,3
+LSEL,a,,,1
+LESIZE,all,,,1
+amap,1,1,2,3,4
+amap,2,3,2,6,7
+
+!loads SYMMETRY
+LSEL,s,,,6 
+DL,all,,symm
+!loads Temp = 0
+LSEL,s,,,7
+LSEL,a,,,3
+LSEL,a,,,4
+DL,all,,temp,0
+!loads Temp = 10
+LSEL,s,,,5
+DL,all,,temp,U0
+
+! cyl4,,,a,-90,b,-1
+! cyl4,,,a,-1,b,1
+! cyl4,,,a,1,b,90
+! NUMMRG,kp
+! LSEL,s,,,4
+! LSEL,a,,,10
+! LSEL,a,,,2
+! LSEL,a,,,6
+! LESIZE,all,,,elnum
+! LSEL,s,,,11
+! LSEL,a,,,3
+! LSEL,a,,,9
+! LSEL,a,,,1
+! LESIZE,all,,,2*elnum
+! LSEL,s,,,5      
+! LSEL,a,,,7
+! LESIZE,all,,,1
+! amap,1,1,2,3,4
+! amap,2,3,2,6,7
+! amap,3,6,7,11,10
+! !loads
+! LSEL,s,,,4!SYMMETRY
+! LSEL,a,,,10
+! DL,all,,symm
+! !inner
+! LSEL,s,,,3
+! LSEL,a,,,11
+! LSEL,a,,,7
+! DL,all,,temp,0
+! !outer
+! LSEL,s,,,1
+! DL,all,,temp,-10
+! LSEL,s,,,9
+! DL,all,,temp,10
+
+alls
+/solu
+ANTYPE,static
+outres,all,all
+solve
+finish
+/POST1  
+
+!nodes for cpath r = (a+b)/2
+N1 = NODE(r_c,90,0)
+N2 = NODE(r_c,90-1*deg_step,0)
+N3 = NODE(r_c,90-2*deg_step,0)
+N4 = NODE(r_c,90-3*deg_step,0)
+N5 = NODE(r_c,90-4*deg_step,0)
+N6 = NODE(r_c,90-5*deg_step,0)
+N7 = NODE(r_c,90-6*deg_step,0)
+N8 = NODE(r_c,90-7*deg_step,0)
+N9 = NODE(r_c,1,0)
+!nodes for radial path phi = pi/2 
+N101 = NODE(a,90-4*deg_step,0)
+N102 = NODE(b,90-4*deg_step,0)
+
+/HEADER, OFF
+!path r = (a+b)/2
+PATH, cpath, 9,1,1
+PPATH, 1, N1
+PPATH, 2, N2
+PPATH, 3, N3
+PPATH, 4, N4
+PPATH, 5, N5
+PPATH, 6, N6
+PPATH, 7, N7
+PPATH, 8, N8
+PPATH, 9, N9
+PDEF, cpath_temp, temp, NOAV
+/OUTPUT,cpath_temp.txt
+PRPATH, cpath_temp
+/OUTPUT
+!path phi = pi/2
+PATH, rpath, 2,1,10
+PPATH, 1, N101
+PPATH, 2, N102
+PDEF, rpath_temp, temp
+/OUTPUT,rpath_temp.txt
+PRPATH, rpath_temp
+/OUTPUT
+PLNSOL, TEMP,,0
+FINISH
